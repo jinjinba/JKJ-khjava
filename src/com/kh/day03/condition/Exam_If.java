@@ -13,7 +13,7 @@ public class Exam_If {
 		if(input % 2 == 0) {
 			result = "짝수";
 			//System.out.println(input + "은/는 짝수입니다.");
-		} else {
+		} else {		// if조건식을 쓸 필요가 없으므로 if조건문 생략.
 			result = "홀수";
 			//System.out.println(input + "은/는 홀수입니다.");
 		}
