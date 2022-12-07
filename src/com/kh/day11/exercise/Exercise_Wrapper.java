@@ -1,6 +1,6 @@
 package com.kh.day11.exercise;
 
-public class Exercise_Wapper {
+public class Exercise_Wrapper {
 	public void parserExample() {
 		String strNum = "221123";
 		String strNum2 = "230502";
