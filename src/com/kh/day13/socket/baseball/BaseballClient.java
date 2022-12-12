@@ -27,17 +27,39 @@ public class BaseballClient {
 			dis = new DataInputStream(is);
 			dos = new DataOutputStream(os);
 			System.out.println("게임 준비 완료");
-			
+		
+			while(true) {
 			// 값 보내기
-			System.out.println("--> ");
-			String input = sc.nextLine();
-			dos.writeUTF(input);
+				System.out.println("--> ");
+				String input = sc.nextLine();
+				dos.writeUTF(input);
+				// 결과값 받기
+				String resultMsg = dis.readUTF();
+				System.out.println(resultMsg);
+				// 종료하기
+				if(resultMsg.startsWith("3")) {
+					System.out.println("축하합니다. 아웃입니다!");
+					break;
+				}
+			}
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally {
+			try {
+				dos.close();
+				dis.close();
+				is.close();
+				os.close();
+				socket.close();
+				sc.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 }
